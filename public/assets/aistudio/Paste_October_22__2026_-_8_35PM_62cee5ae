@@ -1,0 +1,956 @@
+# SUPERMASTER PROMPT — OCTOPUS ORGANIZER
+## Motion-Led, AI-Powered, Offline-First Personal Finance Website
+
+### Mission
+
+Build a premium, highly interactive, responsive marketing website for **Octopus Organizer**, a personal financial operating system that helps people organise their entire financial life, understand where their money goes, manage their obligations, and make better financial decisions.
+
+The website must feel modern, intelligent, alive, and genuinely different from a conventional budgeting app.
+
+Do not create another generic fintech landing page with a headline, three phone mockups, a grid of feature cards, and a mountain photograph at the bottom.
+
+Do not make it look like an old-fashioned corporate banking website, a cryptocurrency trading platform, a children's product, or an exaggerated futuristic AI concept.
+
+The experience should combine:
+
+- The visual sophistication of a premium financial technology product.
+- The interaction quality and motion choreography of an outstanding modern creative website.
+- The clarity and trustworthiness expected from an application handling personal financial records.
+- The emotional relevance of a product that helps real people manage money, families, bills, aspirations, and uncertainty.
+
+**The central message is:**
+
+# Your entire financial life, organized.
+## Know where your money goes. Understand where you stand. Plan what comes next.
+
+Supporting positioning:
+
+**Built for real life. Not just expense tracking.**
+
+**Plan better. Live freer.**
+
+These are the core brand messages. Preserve their meaning and use them as a recurring narrative throughout the website.
+
+---
+
+# 1. First inspect the existing project
+
+If the current website source code is available in the workspace, inspect it before implementing the redesign.
+
+The audited public landing repository is `octopus-landing`. Its architecture is Next.js App Router, React, TypeScript and Tailwind CSS.
+
+The application repository is `OctopusFinanceAiAdvisor`, and the backend repository is `octopus-organizers-backend`.
+
+Use the existing project and its established conventions when source access is available.
+
+Do not replace a working application with an isolated mockup merely because a new design is easier to generate from scratch.
+
+Before implementation:
+
+1. Identify the actual project and framework.
+2. Inspect the existing layout, components, styling and assets.
+3. Identify the working waitlist flow and API integration.
+4. Preserve the actual legal and support routes.
+5. Inspect existing application screenshots and UI components.
+6. Identify which features are implemented, partially implemented, beta, or planned.
+7. Identify which external URLs and integrations are valid.
+8. Establish a safe baseline of the existing project.
+
+Do not change unrelated application or backend code.
+
+If the existing repositories and assets are unavailable, build a self-contained, responsive website prototype using the environment's supported stack. Keep external integrations configurable and clearly identify anything that still requires production configuration.
+
+The task is to build the actual working website interface, not just describe a design or return a static picture.
+
+---
+
+# 2. Understand the actual product
+
+Octopus Organizer is more than an expense tracker.
+
+Its core proposition connects four experiences:
+
+1. Manage financial records offline.
+2. Synchronise supported financial data when connected.
+3. Understand the overall financial picture using analytics and cloud-powered AI.
+4. Use financial information to make more informed decisions about the future.
+
+The website must communicate how these capabilities work together.
+
+### Core capabilities to feature prominently
+
+- Offline-first financial ledger using local storage.
+- Online synchronisation and conflict management for supported data.
+- Accounts and transaction management.
+- Manual transaction maintenance and supported bank-statement import.
+- Spending categories and financial reports.
+- Budgets and category-level budget allocation.
+- Net worth, assets and liabilities.
+- Upcoming bills, recurring expenses and reminders.
+- Financial insights and AI Copilot.
+- Data export and user-facing data controls.
+- Emergency-fund and financial-planning-related interfaces where verified.
+
+The application uses WatermelonDB and SQLite for its core local financial records. Its backend supplies synchronisation and conflict-resolution services.
+
+Its current AI Copilot uses cloud AI services. Do not claim that the current LLM inference is fully on-device.
+
+The statement-processing implementation includes several Indian bank formats, but support differs by bank and file type. Inspect the available implementation and avoid publishing an unverified exhaustive support list.
+
+### Important capability boundaries
+
+Respect these distinctions:
+
+**Implemented or evidenced in the audits:** local-first core ledger, supported synchronisation, transaction and account management, category budgeting, net worth and asset/liability interfaces, reminder-related functionality, statement-processing infrastructure, cloud AI integration, export workflows and data controls.
+
+**Requires specific verification before being presented as fully operational:** complete cross-device parity, every bank/document-format combination, every forecasting or simulation workflow, full end-to-end BYOK support, and complete cloud-data deletion semantics.
+
+**Beta, upcoming or roadmap unless implementation proves otherwise:** voice-based financial assistance, mobile home-screen widgets, expanded family-finance experiences, advanced financial decision-rule guidance, and broader travel-finance planning.
+
+The website must never confuse a screen that exists with a fully functional, tested capability.
+
+---
+
+# 3. Art direction and design system
+
+## Overall visual language
+
+Create a contemporary, motion-rich, editorial fintech website with a warm, clean visual foundation and a sophisticated dark visual layer for data-intensive sections.
+
+The aesthetic should feel like a modern premium technology product: confident typography, strong whitespace, precisely aligned layouts, authentic-looking financial UI, restrained colour, and carefully orchestrated animation.
+
+It must not look old-fashioned.
+
+It must not look cartoonish.
+
+It must not use decorative animation that distracts from understanding the product.
+
+### Colour palette
+
+Use these as initial design tokens, adjusting only when the existing brand system requires it:
+
+- Warm ivory: `#F7F8F4`
+- Clean white: `#FFFFFF`
+- Deep ink navy: `#101C2D`
+- Primary emerald: `#07856D`
+- Bright teal: `#19B99A`
+- Soft mint: `#E2F5ED`
+- Muted slate text: `#637184`
+- Restrained gold: `#C79B48`
+- Subtle borders: `#E1E8E4`
+
+Use warm white for explanatory sections and a deep navy surface for selected high-impact product and AI sections.
+
+Emerald represents positive financial actions and progress. Gold is reserved for selected wealth-related details. Red or amber should communicate actual warnings rather than decoration.
+
+Avoid neon outlines around every component.
+
+Avoid excessive glassmorphism, constant gradients, floating 3D objects and glowing cards.
+
+### Typography
+
+Use a modern sans-serif system such as Geist, Inter or a comparable high-quality variable font.
+
+Use large, confident headlines, compact labels for financial data, and highly readable body text.
+
+Use a restrained type scale:
+
+- Hero headline: large, fluid typography with deliberate line breaks.
+- Section headings: strong hierarchy without unnecessary oversized text.
+- Body text: readable on mobile and desktop.
+- Data labels: compact but accessible.
+- Navigation and CTA text: concise and clear.
+
+Do not use decorative serif typography across every heading. A small editorial accent is acceptable only if it supports the modern product aesthetic.
+
+### Surfaces and layouts
+
+Use clean grids, asymmetric compositions, carefully layered UI previews, thin borders and subtle shadows.
+
+Do not put every item inside an identical rounded card.
+
+Create visual variety through layout, whitespace, colour blocks, large typography, charts, timelines, interactive demonstrations and carefully positioned interface elements.
+
+Avoid stock illustrations of smiling people holding phones.
+
+Avoid using a mountain photograph as a substitute for product storytelling.
+
+Use authentic application screenshots wherever available. Otherwise, build realistic interface previews as actual UI components, with illustrative data explicitly identified as such.
+
+---
+
+# 4. Page composition: a complete landing page
+
+Build the entire website as one coherent, responsive, long-form experience.
+
+The homepage must communicate the product's value immediately, then guide users from their financial pain points to an understanding of the solution.
+
+## Section 01 — Navigation
+
+Build a refined, compact navigation bar.
+
+Left:
+- Octopus Organizer brand symbol and wordmark.
+
+Centre:
+- Product
+- How it works
+- Financial planning
+- AI Copilot
+- Privacy
+- FAQ
+
+Right:
+- Early-access CTA.
+- Public Android download only if its destination has been verified.
+
+Use smooth in-page navigation, accessible focus states, a polished sticky-header transition and a compact mobile menu.
+
+The navigation can become more compact as the visitor scrolls.
+
+Do not render dead social icons or fabricated links.
+
+Preserve the existing privacy, terms, data-safety, licenses, contact and account-deletion routes.
+
+## Section 02 — Hero: the complete financial picture
+
+Use a visually distinctive editorial split layout.
+
+The left side presents the core message:
+
+Small label:
+
+`OFFLINE-FIRST PERSONAL FINANCE`
+
+Headline:
+
+**Your entire financial life, organized.**
+
+Supporting statement:
+
+"Track every rupee you record, manage budgets and upcoming bills, understand your net worth, and use AI-powered insights to make more informed financial decisions."
+
+Supporting descriptor:
+
+"Designed to work offline for your core financial records, with supported online synchronisation and cloud-powered AI when you need it."
+
+Primary CTA:
+- Join Early Access.
+
+Secondary CTA:
+- Explore the Product.
+
+Use a verified Android download action only if a working public destination has been established. The audited website's existing public GitHub APK link is broken, so do not reuse it blindly.
+
+Below the CTAs, display three small, clear propositions:
+
+- Core financial records work offline.
+- Sync supported data when connected.
+- Cloud AI helps you explore your finances.
+
+Do not write "all AI works offline" or "all your data never leaves your device."
+
+### Hero visual
+
+The right side should contain one dominant, high-quality financial application preview, not an untidy pile of phone mockups.
+
+Create a realistic interface showing:
+
+- Total net worth.
+- Accounts and balances.
+- Monthly spending.
+- Budget progress and remaining amount.
+- Recent transactions.
+- Upcoming bills.
+- A compact financial insight.
+
+The composition can layer a primary app window with a smaller companion device preview to communicate multi-device continuity.
+
+Use actual source components or screenshots wherever possible. Make sure any displayed numbers are either genuine approved demo data or labelled illustrative data.
+
+The hero should immediately communicate the combined experience of financial organisation, offline-first operation and financial intelligence.
+
+### Hero motion
+
+On initial load, choreograph a single entrance sequence:
+
+1. Navigation enters with a small downward movement.
+2. The headline reveals with a subtle blur-to-sharp transition.
+3. The main application preview settles into position.
+4. The spending chart draws into view.
+5. A budget indicator updates into its displayed state.
+6. A small AI insight panel appears last.
+
+Use smooth transforms and opacity rather than repeated layout recalculation.
+
+No continuous shaking, bouncing, flashing, or rapid numeric counters.
+
+---
+
+# 5. Section 03 — Make the financial pain points visible
+
+Create a distinctive section with the headline:
+
+**Sound familiar?**
+
+Supporting copy:
+
+"Managing money gets complicated when the information you need is scattered across accounts, cards, bills and spreadsheets."
+
+Present the following real-life financial problems through concise statements:
+
+### Pain point A — Money disappears between expenses
+
+"I earn every month, but I still don't know exactly where my money goes."
+
+Explain fragmented transaction histories, small purchases, category confusion and the difficulty of understanding cumulative spending.
+
+### Pain point B — Bills arrive at the wrong time
+
+"I know my recurring expenses exist, but I don't always have a clear picture of what's coming next."
+
+Explain why due dates, upcoming bills and budget commitments matter.
+
+### Pain point C — Net worth is difficult to calculate
+
+"My savings, credit cards, assets and liabilities are spread across different places."
+
+Explain the challenge of understanding total assets, outstanding obligations and overall wealth together.
+
+### Pain point D — Budgeting is not one-size-fits-all
+
+"The budgeting method that works for someone else may not work for me."
+
+Introduce the idea of different budgeting approaches for different people and financial circumstances.
+
+### Pain point E — Big decisions create uncertainty
+
+"Can I afford this car, holiday, home purchase or major family expense without putting myself under pressure?"
+
+Introduce the importance of looking beyond today's bank balance.
+
+### Pain point F — Financial information feels too complicated
+
+"I don't want to become a financial expert just to understand my own money."
+
+Introduce clear explanations and AI-assisted understanding.
+
+Use a restrained editorial grid or vertically evolving sequence. Each problem should receive its own small visual interaction or relevant interface example.
+
+Do not make the section look like a row of identical complaint cards.
+
+The purpose is for the visitor to recognise their own financial experience.
+
+---
+
+# 6. Section 04 — Show the transformation
+
+Headline:
+
+**From scattered financial records to a clearer picture.**
+
+Create a visual sequence that demonstrates the flow of information through the product:
+
+### Stage 1 — Bring records together
+
+Users maintain transactions manually or import supported financial statements.
+
+### Stage 2 — Organise the information
+
+Transactions are categorised and represented in the financial ledger.
+
+### Stage 3 — Understand the overall picture
+
+Spending, budgets, assets, liabilities and net worth become easier to review together.
+
+### Stage 4 — Explore insights and next steps
+
+Users can examine financial patterns and use the available AI functionality to ask questions about their records.
+
+### Interactive visual treatment
+
+Show one illustrative transaction ledger transforming into:
+
+- A categorised spending view.
+- A monthly budget summary.
+- A net worth breakdown.
+- An AI insight based on the displayed example data.
+
+As the user scrolls through this section, the active stage should change, and the corresponding application UI should transition with it.
+
+Prefer a shared visual that evolves rather than four unrelated illustrations.
+
+On mobile, convert the sequence into a vertical, touch-friendly progression.
+
+If JavaScript is unavailable or reduced motion is preferred, the complete information must remain accessible in a static layout.
+
+---
+
+# 7. Section 05 — The offline-first difference
+
+This is one of the most important sections on the website.
+
+Use a deep ink-navy background with carefully selected product UI elements and a clean, understated animation.
+
+Headline:
+
+**Your money works offline. Your financial picture grows when you're connected.**
+
+Supporting copy:
+
+"Manage your core financial records locally, then synchronise supported data when a connection is available. Use connected services for features that require them."
+
+Create an interactive three-state demonstration.
+
+### State A — Offline
+
+Show a device interface with a local financial ledger, a recent transaction, a budget indicator and a visible local/offline status.
+
+Caption:
+
+"Your core financial records remain available offline."
+
+### State B — Connected
+
+Show the local interface connecting to a second supported device through a synchronisation animation.
+
+Caption:
+
+"Synchronise supported records when you're online."
+
+Do not claim that every platform has complete feature parity unless verified.
+
+### State C — Financial insights
+
+Show an AI insight appearing when the user invokes the cloud-dependent AI feature.
+
+Caption:
+
+"Use cloud-powered AI when you want help understanding your finances."
+
+Make the distinction between offline ledger functionality and network-dependent AI unmistakable.
+
+### Motion
+
+Use a subtle data-flow animation between devices for synchronisation and a brief transition when AI results appear.
+
+Do not create a fictitious glowing cloud storing all of a user's financial data.
+
+Do not imply that cloud synchronisation is automatic, unlimited or always active unless the actual implementation supports those claims.
+
+---
+
+# 8. Section 06 — One financial workspace
+
+Headline:
+
+**More than a budget tracker. A complete financial workspace.**
+
+Show the core capabilities as connected parts of one system.
+
+Prioritise:
+
+1. Accounts and transactions.
+2. Spending intelligence.
+3. Flexible budgeting.
+4. Bills and recurring expenses.
+5. Net worth, assets and liabilities.
+6. Statement import.
+7. AI Copilot.
+8. Financial trends and relevant planning tools.
+9. Data export and privacy controls.
+
+Each capability should have a short, outcome-focused explanation and a genuine interface preview.
+
+Avoid generic feature labels such as "Smart finance" without an explanation.
+
+### Budgeting deserves a distinctive demonstration
+
+Use an interactive budget-method selector populated from the actual budgeting strategies implemented in the source.
+
+When a strategy is selected, show how the same illustrative financial situation would be organised or reviewed under that method, if the underlying functionality supports that demonstration.
+
+Do not invent budgeting rules, strategies, calculations or strategy names.
+
+If the full strategy catalogue cannot be verified, make the component content-driven and use only the confirmed options.
+
+The visitor should understand that the product can accommodate different financial habits rather than forcing every user into one budgeting style.
+
+---
+
+# 9. Section 07 — AI that helps explain money
+
+Headline:
+
+**Ask better questions about your finances.**
+
+Supporting copy:
+
+"Explore spending, budgets and financial patterns with an AI assistant that uses the financial context available to it."
+
+Make this a major visual feature, not merely another small card.
+
+Show an authentic chat-interface preview beside the financial metrics that inform the response.
+
+Use illustrative sample questions such as:
+
+- Where did my money go this month?
+- How has my spending changed?
+- What bills are coming up?
+- How much of my monthly budget remains?
+- What should I consider before making a major purchase?
+
+Only display answers that can be supported by the relevant implemented financial data and calculations.
+
+### AI interaction modes
+
+Inspect the source before rendering claims about provider choices.
+
+Where verified, distinguish:
+
+**Built-in financial insights:** Predetermined or rules-based results for supported metrics.
+
+**AI Copilot:** Cloud-powered conversation and contextual insights.
+
+**Bring Your Own AI:** User-configured provider or model credentials, only if the complete flow is verified.
+
+If BYOK support is incomplete or unavailable, identify it as beta or roadmap rather than presenting it as an operational mode.
+
+Explain that AI availability requires network connectivity when that is how the feature works.
+
+Use one carefully choreographed response animation: typing/input, a short processing transition, then a clear, structured result.
+
+Do not fabricate investment guarantees, guaranteed savings or claims that AI answers are financially authoritative.
+
+---
+
+# 10. Section 08 — Built for different financial lives
+
+Headline:
+
+**Different people. Different goals. One organised financial life.**
+
+Build a set of interactive use cases that reveal how the same financial foundation can support different priorities.
+
+### The student
+
+Question:
+
+"Will my money last until the next payday?"
+
+Demonstrate income, expenses, budget remaining and upcoming obligations.
+
+### The professional
+
+Question:
+
+"Where did my salary go, and how can I plan better?"
+
+Demonstrate spending patterns, recurring expenses, budgets and net worth.
+
+### The couple or household
+
+Question:
+
+"How do we keep track of household expenses and our financial goals?"
+
+Demonstrate household budgeting concepts and separate financial responsibilities where supported.
+
+Do not imply shared accounts, multi-member access or permission management unless those workflows have been implemented and verified.
+
+### The parent
+
+Question:
+
+"What will upcoming family expenses mean for the rest of our budget?"
+
+Demonstrate upcoming obligations and available budget headroom.
+
+### The future planner
+
+Question:
+
+"Can I prepare for a car, a home or a major expense?"
+
+Demonstrate scenario-based planning only where actual functionality supports it. Otherwise, label the experience as an upcoming capability.
+
+Use inclusive, credible visual design. If photography is used, keep it editorial and understated. Do not turn users into cartoon characters or rely on stereotypical portraits.
+
+This section should help visitors identify with the problem, not make assumptions about their profession or income.
+
+---
+
+# 11. Section 09 — Plan for what comes next
+
+Headline:
+
+**Your money today. Your choices tomorrow.**
+
+Present the available financial-planning tools and their current status.
+
+### Available or verified capabilities
+
+Show confirmed budget management, relevant financial-health interfaces, reminders, goals and safety-fund functionality where their workflows are actually verified.
+
+### Upcoming financial planning
+
+Where not yet implemented, clearly label:
+
+- Voice-based financial assistance.
+- Home-screen widgets showing budget progress or upcoming bills.
+- Expanded family financial visibility.
+- Financial decision rules for large purchases.
+- Broader travel and life-goal planning.
+- Additional financial forecasting capabilities.
+
+Do not present these as available product features until they are implemented and verified.
+
+### Motion
+
+Use an evolving financial timeline or connected milestone view.
+
+The visitor should be able to see how everyday spending and planned obligations can relate to larger life goals.
+
+Use clear visual progression rather than a generic horizontal feature carousel.
+
+---
+
+# 12. Section 10 — Widgets, notifications and everyday awareness
+
+Give this area its own visual treatment.
+
+Headline:
+
+**The important numbers, when you need them.**
+
+Where verified, show how recurring bills, reminders and budget progress help the user remain aware of financial obligations.
+
+A future widget demonstration can preview information such as:
+
+- Monthly budget remaining.
+- Upcoming bills.
+- Spending against a category limit.
+- An optional financial reminder.
+
+Use an authentic mobile home-screen composition for any planned widget, with a visible "Coming soon" label where necessary.
+
+Do not pretend that a website animation proves an actual native widget is already deployed.
+
+Prioritise clarity and legibility. Avoid notifications that create pressure, shame or excessive alerts.
+
+---
+
+# 13. Section 11 — Privacy and data control
+
+Headline:
+
+**Understand your money. Understand where your data goes.**
+
+Explain the actual data-handling model clearly.
+
+Cover:
+
+- Local financial-record storage.
+- Online synchronisation of supported records.
+- Cloud processing required by selected features.
+- AI-related data transmission when Copilot is used.
+- Available export and deletion capabilities.
+- Relevant privacy and security documentation.
+
+The visual presentation must distinguish local processing from remote processing.
+
+Do not display a blanket claim that all data always stays on the device.
+
+Do not claim that all data is encrypted, never transmitted or instantly erased everywhere unless that is established by the actual implementation and production configuration.
+
+Preserve the existing Privacy Policy, Terms of Service, Data Safety, Licenses, Contact and Account Deletion pages.
+
+Use simple language that a non-technical user can understand.
+
+---
+
+# 14. Section 12 — Conversion and early access
+
+Headline:
+
+**Take control of your financial future.**
+
+Supporting copy:
+
+"Start bringing your financial life together with Octopus Organizer."
+
+Primary CTA:
+
+Join Early Access.
+
+Secondary CTA:
+
+Explore the Product.
+
+Preserve and verify the existing waitlist form integration, field validation, loading behaviour, duplicate handling and success/error states.
+
+Do not fake registrations or display fabricated waitlist counts.
+
+Do not invent testimonials, ratings, customer counts or savings statistics.
+
+If a public Android download destination has not been verified, direct visitors to early access rather than to the existing broken private GitHub APK URL.
+
+Make the final CTA visually distinctive but consistent with the rest of the website.
+
+---
+
+# 15. Section 13 — FAQ and footer
+
+Create a concise, accessible FAQ covering the genuine questions visitors will have:
+
+- Can I use Octopus Organizer without an internet connection?
+- How does online synchronisation work?
+- Does the application require bank-login credentials?
+- How do bank-statement imports work?
+- Which statement formats are supported?
+- How does AI Copilot process financial information?
+- Can I use my own AI provider?
+- How can I export or delete my data?
+- Which platforms and capabilities are currently supported?
+- Which features are in beta or planned?
+
+Generate answers from the verified product state. For anything unverified, say so rather than guessing.
+
+Preserve the actual legal and support routes:
+
+- Privacy Policy.
+- Terms of Service.
+- Data Safety.
+- Licenses.
+- Contact.
+- Account Deletion.
+
+Display Discord, X, YouTube and LinkedIn only when valid official destination URLs are provided or verified in the project configuration.
+
+Do not invent social URLs or leave decorative icons pointing nowhere.
+
+---
+
+# 16. Motion specification — the defining experience
+
+The website should feel alive, but motion must serve an understandable purpose.
+
+Create one cohesive motion system rather than many unrelated animation effects.
+
+### A. Entrance animation
+
+Run a restrained entrance sequence for the hero:
+
+1. Logo and navigation appear.
+2. Headline reveals line by line.
+3. Application interface enters.
+4. The displayed chart draws.
+5. Budget metrics appear.
+6. AI insight panel enters last.
+
+Use opacity, transforms, clipping and carefully timed blur effects.
+
+### B. Financial data choreography
+
+Build a signature scroll interaction that connects:
+
+Transaction ledger → spending categories → budget progress → net worth → AI insight.
+
+Each transition should show a meaningful relationship between financial records and an understandable result.
+
+### C. Offline-to-online interaction
+
+An interactive control should switch the demonstration among:
+
+- Offline ledger.
+- Connected synchronisation.
+- Online AI insight.
+
+The same financial example should remain recognisable throughout the interaction.
+
+### D. Product cards
+
+Use controlled hover movement, subtle border transitions, icon changes and gentle emphasis.
+
+Keep movement small enough that the website still feels trustworthy.
+
+### E. AI interface
+
+Animate the appearance of a question, a short processing state and a structured answer. Keep the process brief and never simulate a real external response unless one is actually being generated.
+
+### F. Scroll behaviour
+
+Use scroll-triggered reveals with appropriate thresholds.
+
+Do not hide essential content until an animation finishes.
+
+Do not add scroll hijacking or excessive parallax.
+
+Do not make the entire site depend on continuous animation.
+
+### Motion timing
+
+Use these starting parameters:
+
+- UI entrance: approximately 400–650 ms.
+- Related-element stagger: approximately 60–100 ms.
+- Hover transitions: approximately 180–250 ms.
+- Ambient background movement: slow and subtle.
+- Scroll reveals: short enough to avoid delaying reading.
+
+Respect `prefers-reduced-motion`.
+
+Reduced-motion users should receive a complete, coherent static experience.
+
+On mobile, simplify expensive effects and maintain responsive touch interactions.
+
+---
+
+# 17. Responsive layout and implementation quality
+
+Design for:
+
+- Wide desktop screens.
+- Standard laptop screens.
+- Tablets.
+- Mobile devices with narrow viewports.
+- Touch navigation and keyboard navigation.
+- Reduced-motion preferences.
+
+Use fluid typography, sensible content-width constraints, reusable components and responsive spacing.
+
+Do not scale the entire desktop website down to fit mobile.
+
+Recompose sections where necessary.
+
+The product interface should remain readable at each viewport size.
+
+Use accessible semantic structure, visible focus states, adequate contrast, labelled form fields, accessible menus and clear error messages.
+
+Preserve the current framework and dependency conventions when modifying the real repository.
+
+Avoid unnecessary dependencies and performance-heavy video or WebGL effects.
+
+Use CSS and SVG for most of the motion.
+
+If a video background or other large asset is introduced, ensure it has an appropriate poster, loading strategy and static fallback.
+
+Keep the initial page responsive and fast.
+
+---
+
+# 18. Technical and integration requirements
+
+When the actual website repository is available:
+
+- Preserve existing working routes and APIs.
+- Preserve the waitlist submission integration.
+- Preserve working validation and error states.
+- Preserve legal and support pages.
+- Replace only verified broken or obsolete destinations with confirmed valid URLs.
+- Do not fabricate a public APK download URL.
+- Do not expose secrets.
+- Do not change database schemas or backend code as part of the website redesign.
+- Do not invent analytics or claim tracking works unless its integration is established.
+- Use available real application assets wherever possible.
+- Keep feature content maintainable and driven by a clear source of truth.
+- Avoid duplicate or conflicting feature descriptions across sections.
+
+If a feature cannot be verified, the UI must treat it conservatively.
+
+If the destination of a link is unknown, do not publish a guessed destination.
+
+If functionality is unavailable, either omit the associated CTA or provide an appropriately labelled roadmap state.
+
+---
+
+# 19. Final acceptance criteria
+
+The completed website must satisfy the following conditions.
+
+### Product understanding
+
+A first-time visitor should quickly understand:
+
+1. What Octopus Organizer does.
+2. Why offline-first financial management matters.
+3. How supported online synchronisation complements offline operation.
+4. How accounts, spending, budgets, bills, assets and liabilities fit together.
+5. How AI can help interpret the available financial information.
+6. How the product can support future financial planning.
+
+### Visual distinction
+
+The page must not resemble a generic budgeting template.
+
+Its signature experience must communicate financial information becoming organised, understood and actionable.
+
+It should look contemporary, premium, clear and trustworthy.
+
+### Functional integrity
+
+Every visible CTA, navigation item, waitlist form and FAQ must behave correctly.
+
+No broken download destinations.
+
+No empty social links.
+
+No fabricated testimonials or live user counts.
+
+No invented financial calculations.
+
+No unsupported claims of on-device AI, automatic SMS reading or universal offline capability.
+
+### Motion quality
+
+The main data-flow animation must visibly explain a financial workflow.
+
+The offline-to-online demonstration must respond to user interaction.
+
+Scrolling and hover interactions must be smooth and accessible.
+
+Reduced-motion support must work.
+
+### Responsive quality
+
+The website must reflow appropriately on mobile, tablet and desktop.
+
+It must not have horizontal overflow, clipped text, unusable forms or navigation that disappears without an alternative.
+
+### Engineering quality
+
+Use existing project conventions.
+
+Run the relevant available checks safely.
+
+Report the actual files changed, tests and checks run, verified results, any known regressions and remaining integration blockers.
+
+Do not claim that a build, test, integration or download works unless it has been verified.
+
+---
+
+# Final creative direction
+
+The experience should make visitors feel:
+
+"I finally understand where my money goes."
+
+"I can manage my financial records without depending on a continuous internet connection."
+
+"I can see my broader financial picture rather than juggling multiple disconnected tools."
+
+"I can ask questions about my finances instead of interpreting every number alone."
+
+"I can plan for the life I want, not just track the money I have already spent."
+
+The website's signature story is:
+
+**Bring your financial life together. Understand it. Plan what comes next.**
+
+Build the complete responsive website with polished visual design, realistic product previews, meaningful animation and working interactions.
+
+Do not stop at a hero section.
+
+Do not deliver merely a screenshot.
+
+Implement the full experience, verify the available functionality and clearly report anything that remains unimplemented or unverified.

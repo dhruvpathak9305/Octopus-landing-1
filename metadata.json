@@ -1,0 +1,8 @@
+{
+  "name": "Remix Octopus Organizer",
+  "description": "Motion-led, AI-powered, offline-first personal financial operating system. Your entire financial life, organized.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
